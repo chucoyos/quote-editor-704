@@ -26,8 +26,9 @@ class QuotesTest < ApplicationSystemTestCase
     # and to see our "Capybara quote" added to the list
     assert_selector "h1", text: "Quotes"
     assert_text "Capybara quote"
+  end
 
-    test "Showing a quote" do
+  test "Showing a quote" do
     visit quotes_path
     click_link @quote.name
 
@@ -56,5 +57,4 @@ class QuotesTest < ApplicationSystemTestCase
     assert_no_text @quote.name
   end
 
-  end
 end

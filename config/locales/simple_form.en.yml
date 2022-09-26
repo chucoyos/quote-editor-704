@@ -29,3 +29,16 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    placeholders:
+      quote:
+        name: Name of your quote
+    labels:
+      quote:
+        name: Name
+
+  helpers:
+    submit:
+      quote:
+        create: Create quote
+        update: Update quote
+  
