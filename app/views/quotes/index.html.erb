@@ -1,13 +1,19 @@
-<%= turbo_stream_from "quotes" %>
-  <div class="header">
-    <h1>Quotes</h1>
-    <%= link_to "New quote",
-      new_quote_path,
-      class: "btn btn-primary mb-3",
-      data: { turbo_frame: dom_id(Quote.new) } %>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= turbo_stream_from "quotes" %>
+        <div class="header">
+          <h1>Quotes</h1>
+          <%= link_to "New quote",
+            new_quote_path,
+            class: "btn btn-primary mb-3",
+            data: { turbo_frame: dom_id(Quote.new) } %>
+        </div>
 
-  <%= turbo_frame_tag Quote.new %>
-  <%= turbo_frame_tag "quotes" do %>
-    <%= render @quotes %>
-  <% end %>
+        <%= turbo_frame_tag Quote.new %>
+        <%= turbo_frame_tag "quotes" do %>
+          <%= render @quotes %>
+        <% end %>
+    </div>
+  </div>
+</div>
