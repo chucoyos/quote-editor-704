@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-xl-2">
+    </div>
+    <div class="col-12 col-xl-8">
       <%= turbo_stream_from "quotes" %>
         <div class="header">
           <h1>Quotes</h1>
@@ -14,6 +16,8 @@
         <%= turbo_frame_tag "quotes" do %>
           <%= render @quotes %>
         <% end %>
+    </div>
+    <div class="col-xl-2">
     </div>
   </div>
 </div>
