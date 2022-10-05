@@ -1,0 +1,21 @@
+<header class="navbar">
+  <% if user_signed_in? %>
+    <div class="navbar-brand">
+      Company: <%= current_user.company.name %>
+    </div>
+    <div class="navbar-name">
+      User: <%= current_user.email %>
+    </div>
+    <%= button_to "Sign out",
+                  destroy_user_session_path,
+                  method: :delete,
+                  class: "btn btn-dark" %>
+  <% else %>
+    <%= link_to "Sign in",
+                new_user_session_path,
+                class: "btn btn-dark navbar-right" %>
+    <%= link_to "Sign up",
+                new_user_registration_path,
+                class: "btn btn-dark navbar-right" %>
+  <% end %>
+</header>

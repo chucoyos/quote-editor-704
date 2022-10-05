@@ -15,6 +15,7 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(quote_params)
+    @quote.company = set_quote_company
 
     if @quote.save
       redirect_to quotes_path, notice: "Quote was successfully created."
@@ -52,4 +53,11 @@ class QuotesController < ApplicationController
   def quote_params
     params.require(:quote).permit(:name)
   end
+
+  private
+
+  def set_quote_company
+    @quote_company = current_user.company
+  end
+
 end
