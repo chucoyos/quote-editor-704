@@ -1,28 +1,24 @@
 <%= turbo_frame_tag quote do %>
   <div class="row">
-    <div class="col">
-      <div class="d-flex">
-            <div class="flex-grow-1">
-              <%= link_to quote.name, 
-                quote_path(quote),
-                class: "btn btn-outline",
-                data: { turbo_frame: "_top" }
-              %>
-            </div>
-            <div class="">
-              <%= button_to quote_path(quote),
-                method: :delete,
-                class: "btn btn-light" do %>
-                <i class="bi bi-trash"></i>
-              <% end %>
-            </div>
-            <div class="">
-              <%= link_to edit_quote_path(quote),
-                class: "btn btn-light" do %>
-                <i class="bi bi-pencil-square"></i>
-              <% end %>
-            </div>
-      </div>
+    <div class="col-8">
+      <%= link_to quote.name, 
+        quote_path(quote),
+        class: "btn btn-outline",
+        data: { turbo_frame: "_top" }
+      %>
+    </div>
+    <div class="col-2">
+      <%= button_to quote_path(quote),
+        method: :delete,
+        class: "btn btn-light" do %>
+        <i class="bi bi-trash"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to edit_quote_path(quote),
+        class: "btn btn-light" do %>
+        <i class="bi bi-pencil-square"></i>
+      <% end %>
     </div>
   </div>
 <% end %>
