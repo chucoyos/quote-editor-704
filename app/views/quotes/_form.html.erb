@@ -1,27 +1,31 @@
 <div class="container">
-  <% if quote.errors.any?%>
-    <div class="alert alert-warning alert-dismissible fade show">
-      <%= quote.errors.full_messages.to_sentence.capitalize %>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+  <section class="row">
+    <div class="col">
+      <% if quote.errors.any?%>
+        <div class="alert alert-warning alert-dismissible fade show">
+          <%= quote.errors.full_messages.to_sentence.capitalize %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </section>
+
   <div class="row">
-    <div class="col-12 col-xl-6">
-      <div class="d-flex">
+    
         <%= simple_form_for quote, html: { class: "input-group" } do |f| %>
-          <div class="p-2">
+          <div class="col">
             <%= f.input :name, input_html: { autofocus: true, class: "form-control btn" } %>
           </div>
-          <div class="p-2">
+          <div class="col-auto">
             <%= f.submit class: "btn btn-light" %>
           </div>
-          <div class="p-2">
+          <div class="col-auto">
             <%= link_to quotes_path, class: "btn btn-light" do %>
               <i class="bi bi-arrow-return-left"></i>
             <% end %>
           </div>
-        <% end %>
-      </div>
-    </div>
+        <% end %> <%# end simple_form_for %>
+
   </div>
-</div>
+</div> <%# End of container %>
