@@ -1,10 +1,10 @@
 <header class="navbar shadow p-3 mb-5 bg-body">
   <% if user_signed_in? %>
     <div class="navbar-brand">
-      Company: <%= current_user.company.name %>
+      Company: <%= current_company.name %>
     </div>
     <div class="navbar-name">
-      User: <%= current_user.email %>
+      User: <%= current_user.name %>
     </div>
     <%= button_to "Sign out",
                   destroy_user_session_path,
