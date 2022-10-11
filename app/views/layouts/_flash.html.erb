@@ -1,0 +1,12 @@
+<div class="container" id="flash">
+  <div class="row">
+    <div class="col">
+      <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type == "notice" ? "success" : "danger" %> alert-dismissible fade show">
+          <%= message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
