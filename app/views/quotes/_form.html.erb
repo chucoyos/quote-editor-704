@@ -1,31 +1,12 @@
-<div class="container">
-
-  <section class="row">
-    <div class="col">
-      <% if quote.errors.any?%>
-        <div class="alert alert-warning alert-dismissible fade show">
-          <%= quote.errors.full_messages.to_sentence.capitalize %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <% end %>
-    </div>
-  </section>
-
-  <div class="row mb-3">
     
-        <%= simple_form_for quote, html: { class: "input-group" } do |f| %>
-          <div class="col">
-            <%= f.input :name, input_html: { autofocus: true, class: "form-control btn" } %>
-          </div>
-          <div class="col-auto">
-            <%= f.submit class: "btn btn-light" %>
-          </div>
-          <div class="col-auto">
-            <%= link_to quotes_path, class: "btn btn-light" do %>
-              <i class="bi bi-arrow-return-left"></i>
-            <% end %>
-          </div>
-        <% end %> <%# end simple_form_for %>
+<%= simple_form_for quote, html: { class: "quote form" } do |f| %>
+  <% if quote.errors.any?%>
+    <div class="error-message">
+      <%= quote.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
 
-  </div>
-</div> <%# End of container %>
+  <%= f.input :name, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", quotes_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

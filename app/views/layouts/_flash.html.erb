@@ -1,11 +1,5 @@
-<div class="container" id="flash">
-  <div class="row">
-    <div class="col">
-      <% flash.each do |type, message| %>
-        <div class="alert alert-<%= type == "notice" ? "success" : "danger" %> flash__message">
-          <%= message %>
-        </div>
-      <% end %>
-    </div>
+<% flash.each do |flash_type, message| %>
+  <div class="flash__message">
+    <%= message %>
   </div>
-</div>
+<% end %>
